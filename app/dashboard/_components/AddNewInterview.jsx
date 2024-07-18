@@ -26,7 +26,7 @@ function AddNewInterview() {
   const [loading, setLoading] = useState(false);
   const [jsonResponse, setJsonResponse] = useState([]);
   const { user } = useUser();
-//   const router = useRouter();
+  const router = useRouter();
 
   const onSubmit = async (e) => {
     e.preventDefault();
@@ -69,7 +69,7 @@ function AddNewInterview() {
             createdAt: moment().format('DD-MM-YYYY'),
           }).returning({ mockId: MockInterview.mockId });
           setLoading(false);
-          // router.push(`dashboard/interview/${res[0]?.mockId}`);
+          router.push(`dashboard/interview/${res[0]?.mockId}`);
       } else {
         console.error("Error: Unable to extract JSON response");
       }
