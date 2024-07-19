@@ -17,6 +17,7 @@ import { v4 as uuidv4 } from 'uuid';
 import { db } from "@/utils/db";
 import { useUser } from "@clerk/nextjs";
 import moment from "moment";
+import { useRouter } from "next/navigation";
 
 function AddNewInterview() {
   const [openDialog, setOpenDialog] = useState(false);
@@ -123,7 +124,7 @@ function AddNewInterview() {
                   <Input
                     placeholder="Ex. 5"
                     type="number"
-                    min="1"
+                    min="0"
                     max="70"
                     required
                     onChange={(e) => setJobExperience(e.target.value)}
