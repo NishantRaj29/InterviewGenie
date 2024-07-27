@@ -16,6 +16,10 @@ import { useRouter } from 'next/navigation';
 
 const Feedback = ({params}) => {
   const [feedbackList,setFeedbackList] = useState([]);
+  const score = feedbackList.reduce((acc, item) => {
+    const rating = parseFloat(item.rating);
+    return !isNaN(rating) ? acc + rating : acc;
+  }, 0);
   const router = useRouter()
   useEffect(()=>{
     GetFeedback();
@@ -28,17 +32,20 @@ const Feedback = ({params}) => {
     console.log("🚀 ~ file: page.jsx:11 ~ GetFeedback ~ result:", result);
     setFeedbackList(result);
   }
+
+
+
   return (
     <div className='p-10'>
-      <h2 className='text-3xl font-bold text-green-600'>Congratulations!</h2>
-      <h2 className='font-bold text-2xl'>Here is your interview feedback</h2>
+      <h2 className='text-3xl font-bold text-green-400'>Congratulations!</h2>
+      <h2 className='font-bold text-2xl text-green-600	'>Here is your interview feedback</h2>
       {feedbackList?.length ==0 ?
       <h2 className='font-bold text-lg text-green-500'>No interview Feedback</h2>
       : <>
       <h2 className='text-primary text-lg my-2'>
-        Your overall interview rating: <strong>7/10</strong>
+        Your overall interview rating: <strong>{score}/10</strong>
       </h2>
-      <h2 className='text-sm text-gray-500'>Find below interview questions with coreect answers,Your answer and feedback for improvements for your next interview</h2>
+      <h2 className='text-sm text-zinc-100'>Find below interview questions with coreect answers,Your answer and feedback for improvements for your next interview</h2>
       {feedbackList&&feedbackList.map((item,index)=>(
         <Collapsible key={index} className='mt-7'>
         <CollapsibleTrigger className='p-2 flex justify-between bg-secondary rounded-lg my-2 text-left gap-7 w-full'>

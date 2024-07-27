@@ -22,20 +22,20 @@ function Interview({ params }) {
     setInterviewData(result[0]);
   };
   return (
-    <div className="my-10 ">
-      <h2 className="font-bold text-2xl">Lets get started</h2>
+    <div className="my-0 mx-10 p-7">
+      <h2 className="font-bold text-4xl text-zinc-300">Lets get started</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
         <div className="flex flex-col my-5 gap-5">
           <div className="flex flex-col p-5  rounded-lg border gap-5">
-            <h2 className="text-lg">
+            <h2 className="text-lg text-green-400">
               <strong>Job Role/Job Position: </strong>
               {interviewData?.jobPosition}
             </h2>
-            <h2 className="text-lg">
+            <h2 className="text-lg text-green-400">
               <strong>Job Description/tech Stack: </strong>
               {interviewData?.jobDesc}
             </h2>
-            <h2 className="text-lg">
+            <h2 className="text-lg text-green-400">
               <strong>Years of Experience: </strong>
               {interviewData?.jobExperience}
             </h2>
@@ -62,7 +62,7 @@ function Interview({ params }) {
             <>
               <WebcamIcon className="h-72 my-7 border rounded-lg w-full p-20 bg-secondary" />
               <Button
-                className="w-full"
+                className="w-full bg-zinc-300"
                 variant="ghost"
                 onClick={() => setWebCamEnabled(true)}
               >

@@ -66,7 +66,7 @@ const RecordAnswerSection = ({
       ", User Answer:" +
       userAnswer +
       ",Depends on question and user answer for given interview question " +
-      " please give use rating for answer and feedback as area of improvement if any" +
+      " please give the report of user answer with  rating for answer out of 2 marks and feedback as area of improvement in there answer if any" +
       " in just 3 to 5 lines to improve it in JSON format with rating field and feedback field";
     console.log(
       "🚀 ~ file: RecordAnswerSection.jsx:38 ~ SaveUserAnswer ~ feedbackPrompt:",
