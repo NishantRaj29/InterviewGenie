@@ -15,7 +15,7 @@ function Header() {
     <div className='flex items-center justify-between bg-indigo-200 shadow-md'>
       <div 
           style={{
-            backgroundImage: 'url("nav2.jpg")',
+            backgroundImage: 'url("nav3.png")',
             backgroundSize: 'cover',  // Ensures the image covers the whole div
             backgroundPosition: 'center',  // Centers the image
             backgroundRepeat: 'no-repeat',  // Prevents the image from repeating
@@ -24,7 +24,8 @@ function Header() {
             display:'flex',
             justifyContent:'space-between',
             padding: '0.45rem',
-            paddingLeft:'2rem'
+            paddingLeft:'2rem',
+            paddingRight:'2rem'
           }}
         >
         <Link href={`/dashboard`}>
