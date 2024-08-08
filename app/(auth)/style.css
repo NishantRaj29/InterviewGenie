@@ -6,7 +6,7 @@
 }
 
 body{
-    background-color: #c9d6ff;
+    
     background-image: radial-gradient(circle, #351048, #310e42, #2d0b3d, #2a0937, #260732, #280834, #290935, #2b0a37, #320e41, #39134b, #401755, #471c60);
     display: flex;
     align-items: center;

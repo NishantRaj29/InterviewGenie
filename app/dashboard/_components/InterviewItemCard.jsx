@@ -23,7 +23,7 @@ const InterviewItemCard = ({ interview }) => {
             padding: '1.5rem'
           }}
         >
-      <h2 className="font-bold text-primary">{interview?.jobPosition}</h2>
+      <h2 className="font-bold text-violet-300">{interview?.jobPosition}</h2>
       <h2 className="text-sm text-zinc-300">Exp: {interview?.jobExperience}</h2>
       <h2 className="text-xs text-zinc-300">
         Created At: {interview?.createdAt}
