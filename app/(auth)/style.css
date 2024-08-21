@@ -22,6 +22,7 @@ body{
     flex-direction: column;
     height: 100vh;
     width: 100vw;
+    position: relative;
 }
 .register{
     position: relative;
@@ -162,3 +163,55 @@ img{
         transform: translateY(2%);
     }
 }
+
+.loading-page {
+    position: absolute;
+    top: 0;
+    left: 0;
+    /* background: linear-gradient(to right, #2c5364, #203a43, #0f2027);
+     */
+     background-image: radial-gradient(circle, #351048, #310e42, #2d0b3d, #2a0937, #260732, #280834, #290935, #2b0a37, #320e41, #39134b, #401755, #471c60);
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: center;
+    justify-content: center;
+    color: #191654;
+    z-index: 12;
+  }
+  
+  #svg {
+    height: 360px;
+    width: 360px;
+    stroke: #CBB26A;
+    fill-opacity: 0;
+    stroke-width: 3px;
+    stroke-dasharray: 4500;
+    animation: draw 8s ease;
+    z-index: 12;
+  }
+  
+  @keyframes draw {
+    0% {
+      stroke-dashoffset: 4500;
+    }
+    100% {
+      stroke-dashoffset: 0;
+    }
+  }
+  
+  .name-container {
+    height: 80px;
+    overflow: hidden;
+  }
+  
+  .logo-name {
+    color: #CBB26A;
+    font-size: 32px;
+    letter-spacing: 12px;
+    text-transform: uppercase;
+    margin-left: 20px;
+    font-weight: bolder;
+  }
