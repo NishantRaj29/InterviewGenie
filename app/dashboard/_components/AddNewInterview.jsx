@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import {
   Dialog,
   DialogContent,
@@ -18,6 +18,7 @@ import { db } from "@/utils/db";
 import { useUser } from "@clerk/nextjs";
 import moment from "moment";
 import { useRouter } from "next/navigation";
+import { useGSAP } from "@gsap/react";
 
 function AddNewInterview() {
   const [openDialog, setOpenDialog] = useState(false);
@@ -28,6 +29,8 @@ function AddNewInterview() {
   const [jsonResponse, setJsonResponse] = useState([]);
   const { user } = useUser();
   const router = useRouter();
+
+  
 
   const onSubmit = async (e) => {
     e.preventDefault();

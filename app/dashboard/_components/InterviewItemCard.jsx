@@ -1,8 +1,11 @@
 import { Button } from "@/components/ui/button";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
 import { useRouter } from "next/navigation";
-import React from "react";
+import React, { useRef } from "react";
 
 const InterviewItemCard = ({ interview }) => {
+    
     const router = useRouter()
     const onStart=()=>{
         router.push('/dashboard/interview/'+interview?.mockId)
@@ -10,8 +13,20 @@ const InterviewItemCard = ({ interview }) => {
     const onFeedbackPress=()=>{
         router.push('dashboard/interview/'+interview.mockId+"/feedback")
     }
+    const cardRef= useRef();
+
+    const tl=gsap.timeline();
+
+      useGSAP(()=>{
+        tl.from(cardRef.current,{
+          x:-500,
+          duration:3,
+          opacity:0,
+          stagger:0.3
+        })
+      })
   return (
-    <div className="shadow-sm rounded-sm " >
+    <div className="shadow-sm rounded-sm " ref={cardRef}>
       <div 
           style={{
             backgroundImage: 'url("card.jpg")',
